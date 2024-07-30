@@ -1,29 +1,18 @@
 [
   {
     "role": "Software Engineer",
-    "organisation": "Google",
-    "startDate": "Sept, 2022",
-    "endDate": "Present",
-    "experiences": ["Worked on Google Maps", "Reduced load times by 50%"],
-    "imageSrc": "history/google.png"
+    "organisation": "Toshiba (Vietnam)",
+    "startDate": "Oct, 2018",
+    "endDate": "Jun, 2023",
+    "experiences": ["Worked on Vending and Semiconductor machines", "C/C++, C#, MFC, Unity, SECS"],
+    "imageSrc": "history/toshiba.jpg"
   },
   {
-    "role": "UI Designer",
-    "organisation": "Mirosoft",
-    "startDate": "Aug, 2021",
-    "endDate": "Aug, 2022",
-    "experiences": ["Worked on Windows 11", "Designed the control panel"],
-    "imageSrc": "history/microsoft.png"
-  },
-  {
-    "role": "SWE Intern",
-    "organisation": "Netflix",
-    "startDate": "Apr, 2020",
-    "endDate": "Jun, 2020",
-    "experiences": [
-      "Worked on component library",
-      "Helped create UI components"
-    ],
-    "imageSrc": "history/netflix.png"
+    "role": "Software Engineer",
+    "organisation": "FPT Software (Vietnam)",
+    "startDate": "Oct, 2016",
+    "endDate": "Oct, 2018",
+    "experiences": ["Worked on Automotive", "C/C++, MFC"],
+    "imageSrc": "history/fpt.png"
   }
 ]

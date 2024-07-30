@@ -12,16 +12,16 @@
     "imageSrc": "skills/react.png"
   },
   {
-    "title": "Node",
-    "imageSrc": "skills/node.png"
+    "title": "C",
+    "imageSrc": "skills/c.png"
   },
   {
-    "title": "GraphQL",
-    "imageSrc": "skills/graphql.png"
+    "title": "C++",
+    "imageSrc": "skills/cplus.png"
   },
   {
-    "title": "MongoDB",
-    "imageSrc": "skills/mongodb.png"
+    "title": "Python",
+    "imageSrc": "skills/python.png"
   },
   {
     "title": "Figma",

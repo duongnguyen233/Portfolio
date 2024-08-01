@@ -1,26 +1,52 @@
 [
   {
-    "title": "Project A",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "Portfolio",
+    "imageSrc": "projects/Portfolio.png",
+    "description": "Developed portfolio website for personal purposes.",
+    "skills": ["React + Vite", "NodeJS", "HTML", "CSS"],
+    "demo": "https://duongnguyen-portfolio.netlify.app/",
+    "source": "https://github.com/duongnguyen233/Portfolio",
+    "hideDemo": false,
+    "hideSource": false
   },
   {
-    "title": "Project B",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "Blog Website",
+    "imageSrc": "projects/Blog.png",
+    "description": "Developed portfolio website for practice purposes.",
+    "skills": ["Python", "Flask", "SQLite", "HTML", "CSS", "REST API"],
+    "demo": "https://my-blog-flask-python-app-3cbfdfd309da.herokuapp.com/",
+    "source": "https://github.com/duongnguyen233/Python-Flask-SQLite-RestApi/tree/main/Learning-Lab_And_Assignment/Assignment2-PythonWeb",
+    "hideDemo": false,
+    "hideSource": false
   },
   {
-    "title": "Project C",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "TFC Bonding Chip",
+    "imageSrc": "projects/TFC.png",
+    "description": "Developed software for bonding chip machines on the back-end process of Semiconductor.",
+    "skills": ["C/C++", "MFC", "SECS"],
+    "demo": "https://www.shibaura.co.jp/e/products/semicon/index.html",
+    "source": "",
+    "hideDemo": false,
+    "hideSource": true
+  },
+  {
+    "title": "Vending Machinne",
+    "imageSrc": "projects/SMV.jpg",
+    "description": "Developed software for ticket vending machines, including hardware, payment system, and GUI.",
+    "skills": ["C/C++", "C#", "WFP", "Unity"],
+    "demo": "https://www.shibaura.co.jp/smv/products/general/index.html",
+    "source": "",
+    "hideDemo": false,
+    "hideSource": true
+  },
+  {
+    "title": "GM Cluster (Automotive)",
+    "imageSrc": "projects/Cluster.png",
+    "description": "Developed software for Human Machine Interface (HMI) on Cars.",
+    "skills": ["C/C++", "MFC", "Kanzi Studio"],
+    "demo": "https://www.youtube.com/watch?v=4aEywv6uB40",
+    "source": "",
+    "hideDemo": false,
+    "hideSource": true
   }
 ]

@@ -12,6 +12,9 @@
 
 .image {
   margin-bottom: 26px;
+  width: 100%; /* or specific width like 300px */
+  height: 200px; /* or any specific height */
+  object-fit: cover; /* Ensures the image covers the area */
 }
 
 .title {

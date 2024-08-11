@@ -12,7 +12,7 @@
   {
     "title": "Blog Website",
     "imageSrc": "projects/Blog.png",
-    "description": "Developed portfolio website for practice purposes.",
+    "description": "Developed blog website for practice purposes.",
     "skills": ["Python", "Flask", "SQLite", "HTML", "CSS", "REST API"],
     "demo": "https://my-blog-flask-python-app-3cbfdfd309da.herokuapp.com/",
     "source": "https://github.com/duongnguyen233/Python-Flask-SQLite-RestApi/tree/main/Learning-Lab_And_Assignment/Assignment2-PythonWeb",

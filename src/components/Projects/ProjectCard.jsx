@@ -4,7 +4,16 @@ import styles from "./ProjectCard.module.css";
 import { getImageUrl } from "../../utils";
 
 export const ProjectCard = ({
-  project: { title, imageSrc, description, skills, demo, source, hideSource, hideDemo },
+  project: {
+    title,
+    imageSrc,
+    description,
+    skills,
+    demo,
+    source,
+    hideSource,
+    hideDemo,
+  },
 }) => {
   return (
     <div className={styles.container}>
@@ -13,29 +22,44 @@ export const ProjectCard = ({
         alt={`Image of ${title}`}
         className={styles.image}
       />
+
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
+
       <ul className={styles.skills}>
-        {skills.map((skill, id) => {
-          return (
-            <li key={id} className={styles.skill}>
-              {skill}
-            </li>
-          );
-        })}
+        {skills.map((skill, id) => (
+          <li key={id} className={styles.skill}>
+            {skill}
+          </li>
+        ))}
       </ul>
+
       <div className={styles.links}>
-        {!hideDemo && (
-        <a href={demo} className={styles.link}>
-          Demo
-        </a>
+        {!hideDemo && demo && (
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
+            Demo
+          </a>
         )}
-        {!hideSource && (
-        <a href={source} className={styles.link}>
-          Source
-        </a>
+
+        {!hideSource && source && (
+          <a
+            href={source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
+            Source
+          </a>
         )}
       </div>
+
     </div>
   );
 };

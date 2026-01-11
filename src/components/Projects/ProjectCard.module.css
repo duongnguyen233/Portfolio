@@ -7,14 +7,24 @@
   background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
   box-shadow: 0 16px 14px 0 #04152d;
   padding: 18px 24px;
-  max-width: 345px;
+
+  /* 🔥 SAME SIZE FOR ALL CARDS */
+  width: 580px;
+  max-width: 380px;
+  height: 730px;
+
+  /* 🔥 important so width doesn't shrink in horizontal list */
+  flex: 0 0 380px;
+
+  justify-content: space-between;
 }
 
+
 .image {
-  margin-bottom: 26px;
-  width: 100%; /* or specific width like 300px */
-  height: 200px; /* or any specific height */
-  object-fit: cover; /* Ensures the image covers the area */
+  margin-bottom: 18px;
+  width: 100%;
+  height: 300px;     /* shorter */
+  object-fit: cover;
 }
 
 .title {
@@ -61,4 +71,14 @@
   border-radius: 100px;
   background: var(--color-primary);
   padding: 1px 22px;
+}
+
+.container {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 22px 0 rgba(4, 21, 45, 0.65);
 }

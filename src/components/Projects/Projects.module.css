@@ -3,8 +3,24 @@
 .container {
   margin-top: 76px;
   color: var(--color-text);
-  margin-left: 10%;
-  margin-right: 10%;
+
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 6px;
 }
 
 .title {
@@ -14,13 +30,109 @@
   text-transform: uppercase;
 }
 
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--color-text);
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, border 180ms ease;
+}
+
+.navBtn:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.carouselShell {
+  width: 100%;
+  margin-top: 22px;
+
+  /* soft fade edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+
 .projects {
-  margin-top: 37px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 15px;
+
   width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 14px 6px 18px;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* nicer carousel feel */
+  scroll-snap-type: x mandatory;
+
+  cursor: grab;
+  user-select: none;
+
+  /* important for pointer-drag on touch */
+  touch-action: pan-y;
+}
+
+/* when dragging */
+.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+.projects::-webkit-scrollbar {
+  height: 10px;
+}
+
+.projects::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.projects::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.item {
+  scroll-snap-align: start;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  animation: cardIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 70ms);
+}
+
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

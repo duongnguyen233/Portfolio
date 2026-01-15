@@ -2,10 +2,12 @@ import React from "react";
 
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
+import Reveal from "../common/Reveal";
 
 export const About = () => {
   return (
     <section className={styles.container} id="about">
+      <Reveal>
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
         <img
@@ -47,6 +49,7 @@ export const About = () => {
           </li>
         </ul>
       </div>
+      </Reveal>
     </section>
   );
 };

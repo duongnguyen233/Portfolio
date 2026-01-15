@@ -8,34 +8,113 @@
   box-shadow: 0 16px 14px 0 #04152d;
   padding: 18px 24px;
 
-  /* 🔥 SAME SIZE FOR ALL CARDS */
-  width: 580px;
-  max-width: 380px;
-  height: 730px;
+  /* SAME SIZE FOR ALL CARDS */
+  width: 450px;
+  max-width: 500px;
+  height: 670px;
 
-  /* 🔥 important so width doesn't shrink in horizontal list */
-  flex: 0 0 380px;
+  /* important so width doesn't shrink in horizontal list */
+  flex: 0 0 500px;
 
   justify-content: space-between;
+
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
 }
 
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 22px 0 rgba(4, 21, 45, 0.65);
+}
 
-.image {
-  margin-bottom: 18px;
+/* =========================
+   BIG IMAGE (fixed size)
+   ========================= */
+.media {
+  position: relative;
   width: 100%;
-  height: 300px;     /* shorter */
-  object-fit: cover;
+  height: 400px; /* ✅ BIG image area */
+  margin-bottom: 14px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: #0b1b3a;
 }
 
+/* Make ALL images same size (crop nicely) */
+.image {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  /* helps padded images feel closer in scale */
+  transform: scale(1.06);
+}
+
+/* =========================
+   Hover fade panel
+   ========================= */
+.hoverPanel {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+}
+
+.container:hover .hoverPanel,
+.container:focus-within .hoverPanel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hoverContent {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+
+  /* no font-family override -> uses your global font */
+}
+
+.hoverDesc {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 1.35;
+
+  /* keep it neat (not too long) */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  opacity: 0.95;
+}
+
+.meta p {
+  margin: 4px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* =========================
+   Under image: title + skills + buttons
+   ========================= */
 .title {
   font-size: 25px;
   font-weight: 700;
-}
-
-.description {
-  margin-top: 6px;
-  font-size: 25px;
-  font-weight: 400;
 }
 
 .skills {
@@ -63,6 +142,7 @@
   justify-content: space-around;
 }
 
+/* keep your button style */
 .link {
   text-decoration: none;
   color: var(--color-text);
@@ -71,14 +151,4 @@
   border-radius: 100px;
   background: var(--color-primary);
   padding: 1px 22px;
-}
-
-.container {
-  transition: transform 200ms ease, box-shadow 200ms ease;
-  will-change: transform;
-}
-
-.container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 22px 0 rgba(4, 21, 45, 0.65);
 }

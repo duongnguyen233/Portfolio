@@ -96,6 +96,18 @@ export const Projects = () => {
     slider.releasePointerCapture?.(e.pointerId);
   };
 
+  // ✅ Wheel scroll -> horizontal slide when mouse is over projects
+  const onWheelProjects = (e) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    // convert vertical wheel to horizontal scroll
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      slider.scrollLeft += e.deltaY;
+    }
+  };
+
   // Buttons (optional but nice)
   const scrollByCards = (direction) => {
     const slider = sliderRef.current;
@@ -109,22 +121,9 @@ export const Projects = () => {
     slider.scrollBy({ left: amount, behavior: "smooth" });
   };
 
-  // avoid page scroll while dragging horizontally
+  // ✅ Keep this empty effect (no wheel listener here now)
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const onWheel = (e) => {
-      // Shift/trackpad horizontal still works naturally,
-      // but this makes vertical wheel scroll slide horizontally.
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        slider.scrollLeft += e.deltaY;
-      }
-    };
-
-    slider.addEventListener("wheel", onWheel, { passive: false });
-    return () => slider.removeEventListener("wheel", onWheel);
+    return () => {};
   }, []);
 
   return (
@@ -156,6 +155,7 @@ export const Projects = () => {
         <div
           className={styles.projects}
           ref={sliderRef}
+          onWheelCapture={onWheelProjects}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}

@@ -6,6 +6,9 @@
     "skills": ["React + Vite", "TailwindCSS", "Node.js", "AWS", "Azure"],
     "demo": "https://care-data-portal.netlify.app/",
     "source": "https://github.com/duongnguyen233/CSIT321_Health-Trends-Analytics",
+    "company": "UoW Capstone Project",
+    "duration": "Jul 2025 - May 2026",
+    "role": "Developer, Leader",
     "hideDemo": false,
     "hideSource": false
   },
@@ -16,6 +19,9 @@
     "skills": ["C/C++", "MFC", "SECS", "Industrial Software"],
     "demo": "https://www.shibaura.co.jp/e/products/semicon/index.html",
     "source": "",
+    "company": "Toshiba",
+    "duration": "Jun 2019 - Jun 2023",
+    "role": "Software Engineer",
     "hideDemo": false,
     "hideSource": true
   },
@@ -26,6 +32,9 @@
     "skills": ["C++", "C#", "WPF", "Unity", "Embedded Systems"],
     "demo": "https://www.shibaura.co.jp/smv/products/general/index.html",
     "source": "",
+    "company": "Toshiba",
+    "duration": "Oct 2018 - Jun 2019",
+    "role": "Software Engineer",
     "hideDemo": false,
     "hideSource": true
   },
@@ -36,6 +45,9 @@
     "skills": ["C/C++", "Kanzi Studio", "MFC", "Embedded Systems"],
     "demo": "https://www.youtube.com/watch?v=4aEywv6uB40",
     "source": "",
+    "company": "FPT Software",
+    "duration": "Oct 2016 - Oct 2018",
+    "role": "Software Engineer",
     "hideDemo": false,
     "hideSource": true
   },
@@ -46,6 +58,9 @@
     "skills": ["Python", "OpenCV", "KNN", "Machine Learning"],
     "demo": "",
     "source": "https://github.com/duongnguyen233/CSCI218-Face-based-identity-recognition",
+    "company": "UoW Group Project",
+    "duration": "Jul 2025 - Oct 2025",
+    "role": "Developer, Leader",
     "hideDemo": true,
     "hideSource": false
   },
@@ -56,6 +71,9 @@
     "skills": ["C/C++", "Python", "Genetic Algorithm", "Algorithm Optimisation"],
     "demo": "",
     "source": "",
+    "company": "Toshiba",
+    "duration": "Jun 2019 - Oct 2019",
+    "role": "Software Engineer",
     "hideDemo": true,
     "hideSource": true
   }

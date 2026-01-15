@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from "./ProjectCard.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -13,19 +12,55 @@ export const ProjectCard = ({
     source,
     hideSource,
     hideDemo,
+
+    // Optional extra info (add in projects.json)
+    duration,
+    company,
+    role,
   },
 }) => {
   return (
     <div className={styles.container}>
-      <img
-        src={getImageUrl(imageSrc)}
-        alt={`Image of ${title}`}
-        className={styles.image}
-      />
+      {/* BIG image */}
+      <div className={styles.media}>
+        <img
+          src={getImageUrl(imageSrc)}
+          alt={`Image of ${title}`}
+          className={styles.image}
+          loading="lazy"
+        />
 
+        {/* Hover panel: show description + company + duration */}
+        <div className={styles.hoverPanel} aria-hidden="true">
+          <div className={styles.hoverContent}>
+            {/* keep text readable but not huge */}
+            {description && <p className={styles.hoverDesc}>{description}</p>}
+
+            <div className={styles.meta}>
+              {company && (
+                <p>
+                  <strong>Company:</strong> {company}
+                </p>
+              )}
+              {duration && (
+                <p>
+                  <strong>Duration:</strong> {duration}
+                </p>
+              )}
+              {role && (
+                <p>
+                  <strong>Role:</strong> {role}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Under image: name */}
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
 
+      {/* Under image: skills */}
       <ul className={styles.skills}>
         {skills.map((skill, id) => (
           <li key={id} className={styles.skill}>
@@ -34,6 +69,7 @@ export const ProjectCard = ({
         ))}
       </ul>
 
+      {/* Under image: buttons (keep your style) */}
       <div className={styles.links}>
         {!hideDemo && demo && (
           <a
@@ -59,7 +95,6 @@ export const ProjectCard = ({
           </a>
         )}
       </div>
-
     </div>
   );
 };

@@ -36,7 +36,9 @@ export const AIAgent = () => {
   const context = useMemo(() => buildDefaultContext(), []);
 
   const apiBase = useMemo(
-    () => import.meta.env.VITE_AI_API_BASE || "http://localhost:8787",
+    () =>
+      import.meta.env.VITE_AI_API_BASE ||
+      (import.meta.env.DEV ? "http://localhost:8787" : ""),
     []
   );
 
@@ -68,7 +70,8 @@ export const AIAgent = () => {
     setQuestion("");
     setIsLoading(true);
     try {
-      const response = await fetch(`${apiBase}/api/ask`, {
+      const base = apiBase ? apiBase.replace(/\/$/, "") : "";
+      const response = await fetch(`${base}/api/ask`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

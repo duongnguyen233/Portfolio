@@ -9,22 +9,24 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Duong Nguyen</h1>
         <p className={styles.description}>
-          A dedicated software developer with a passion for crafting clean,
-          efficient, and well-structured code to build high-quality, reliable
-          products.
+          Software Engineer with experience in embedded systems, industrial
+          automation, and full-stack development. Skilled in C/C++,
+          system-level design, and modern web technologies, with a passion for
+          building efficient, reliable, and high-performance systems.
         </p>
 
-        <a href="mailto:duongnguyen6880@gmail.com" className={styles.contactBtn}>
-          Contact Me
-        </a>
-        <br />
-        <a
-          href="/Resume/DuongNguyen-Resume.pdf"
-          download="DuongNguyen-Resume.pdf"
-          className={styles.contactBtn}
-        >
-          Get Resume
-        </a>
+        <div className={styles.buttonRow}>
+          <a href="mailto:duongnguyen6880@gmail.com" className={styles.contactBtn}>
+            Contact Me
+          </a>
+          <a
+            href="/Resume/DuongNguyen-Resume.pdf"
+            download="DuongNguyen-Resume.pdf"
+            className={styles.contactBtn}
+          >
+            Get Resume
+          </a>
+        </div>
       </div>
 
       <div className={styles.heroWrap}>

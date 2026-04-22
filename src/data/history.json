@@ -1,18 +1,80 @@
 [
   {
-    "role": "Software Engineer",
+    "role": "Software Engineer - E-commerce Systems (Part-time)",
+    "organisation": "Live Fit Nutrition (Wollongong, Australia)",
+    "startDate": "May, 2024",
+    "endDate": "Present",
+    "experiences": [
+      "Developed and maintained e-commerce website features and user interfaces",
+      "Managed order processing workflows and ensured accurate fulfillment operations",
+      "Processed and analyzed order data to support batching and preparation planning",
+      "Customized and maintained Shopify store content, products, and configurations",
+      "Tech: React, TypeScript, Tailwind CSS, Shopify"
+    ],
+    "highlightSkills": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Node.js",
+      "Shopify",
+      "Git"
+    ],
+    "imageSrc": "history/livefit.png"
+  },
+  {
+    "role": "Software Engineer (Full-time)",
     "organisation": "Toshiba Software Development Vietnam (TSDV)",
     "startDate": "Oct, 2018",
     "endDate": "Jun, 2023",
-    "experiences": ["Worked on Vending and Semiconductor machines", "C/C++, C#, MFC, Unity, SECS"],
+    "experiences": [
+      "Developed software for vending machines and semiconductor equipment",
+      "Built communication features using SECS/GEM protocol for machine integration",
+      "Designed and optimized scheduling and control logic for industrial systems",
+      "Integrated software with real hardware systems and performed system-level debugging",
+      "Participated in full lifecycle: design -> development -> testing -> deployment",
+      "Tech: C/C++, C#, MFC, Unity, SECS"
+    ],
+    "highlightSkills": [
+      "C",
+      "C++",
+      "C#",
+      "Python",
+      "Git",
+      "JIRA",
+      "Linux",
+      "Astah",
+      "SECS/GEM"
+    ],
     "imageSrc": "history/toshiba.jpg"
   },
   {
-    "role": "Software Engineer",
+    "role": "Software Engineer (Full-time)",
     "organisation": "FPT Software (Vietnam)",
     "startDate": "Oct, 2016",
     "endDate": "Oct, 2018",
-    "experiences": ["Worked on Automotive", "C/C++, MFC"],
+    "experiences": [
+      "Developed HMI features for automotive systems using C/C++",
+      "Collaborated with international clients (LG, Suzuki, GM, Lexus)",
+      "Contributed to system-level feature development and integration in vehicle platforms",
+      "Participated in requirements analysis, development, testing, and maintenance",
+      "Tech: C/C++, MFC"
+    ],
+    "highlightSkills": [
+      "C",
+      "C++",
+      "gMock",
+      "MISRA",
+      "JUnit",
+      "Git",
+      "JIRA",
+      "Linux",
+      "QNX",
+      "Doxygen",
+      "Astah"
+    ],
     "imageSrc": "history/fpt.png"
   }
 ]

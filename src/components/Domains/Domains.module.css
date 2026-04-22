@@ -1,0 +1,116 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-top: 90px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+}
+
+.tagRow {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(87, 108, 188, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: linear-gradient(145deg, rgba(25, 55, 109, 0.9), rgba(11, 36, 71, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.years {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.company {
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.summary {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.45;
+  opacity: 0.95;
+}
+
+.techList {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.techItem {
+  background: var(--color-dark);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    margin-top: 70px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+}

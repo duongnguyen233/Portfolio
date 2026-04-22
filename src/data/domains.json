@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Automotive HMI & Cluster Systems",
+    "tag": "Automotive",
+    "years": "2 years",
+    "company": "FPT Software",
+    "summary": "Built in-vehicle HMI and digital cluster features for production automotive programs.",
+    "tech": ["C/C++", "Kanzi Studio", "MFC", "Embedded Systems"]
+  },
+  {
+    "title": "Semiconductor Manufacturing Software",
+    "tag": "Semiconductor",
+    "years": "4 years",
+    "company": "Toshiba",
+    "summary": "Developed machine-control and backend software for semiconductor bonding chip systems.",
+    "tech": ["C/C++", "SECS/GEM", "Industrial Software", "Manufacturing"]
+  },
+  {
+    "title": "Ticketing & Self-Service Kiosk Systems",
+    "tag": "Kiosk/Ticketing",
+    "years": "1 year",
+    "company": "Toshiba",
+    "summary": "Built ticket vending software with UI flows, hardware control, coin/change handling, and credit-card payment API integration.",
+    "tech": ["C++", "C#", "WPF", "Payment APIs", "Device Integration"]
+  },
+  {
+    "title": "Web Applications & E-commerce",
+    "tag": "Web & Shopify",
+    "years": "Capstone + Part-time",
+    "company": "University + Livefit Nutrition",
+    "summary": "Built website features and e-commerce flows, including storefront work and Shopify integration.",
+    "tech": ["React", "TypeScript", "TailwindCSS", "Vite", "Node.js", "Shopify"]
+  },
+  {
+    "title": "AI & Computer Vision Projects",
+    "tag": "AI/CV",
+    "years": "University Projects",
+    "company": "University of Wollongong",
+    "summary": "Built face-recognition and AI-assisted projects using computer vision and machine learning.",
+    "tech": ["Python", "OpenCV", "KNN", "Machine Learning"]
+  },
+  {
+    "title": "Embedded Systems Engineering",
+    "tag": "Embedded Systems",
+    "years": "Multi-domain",
+    "company": "Toshiba + FPT Software",
+    "summary": "Built software integrated with real hardware systems in automotive and kiosk environments.",
+    "tech": ["C/C++", "C#", "MFC", "System Integration"]
+  },
+  {
+    "title": "Industrial Optimisation",
+    "tag": "Industrial Optimisation",
+    "years": "Multi-domain",
+    "company": "Toshiba + University Projects",
+    "summary": "Applied optimisation and algorithmic techniques for industrial and compliance-focused systems.",
+    "tech": ["Algorithms", "Python", "C/C++", "Machine Learning"]
+  }
+]

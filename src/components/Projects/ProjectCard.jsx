@@ -8,6 +8,7 @@ export const ProjectCard = ({
     imageSrc,
     description,
     skills,
+    domains,
     demo,
     source,
     hideSource,
@@ -59,6 +60,16 @@ export const ProjectCard = ({
 
       {/* Under image: name */}
       <h3 className={styles.title}>{title}</h3>
+
+      {Array.isArray(domains) && domains.length > 0 && (
+        <ul className={styles.domains}>
+          {domains.map((domain) => (
+            <li key={domain} className={styles.domain}>
+              {domain}
+            </li>
+          ))}
+        </ul>
+      )}
 
       {/* Under image: skills */}
       <ul className={styles.skills}>

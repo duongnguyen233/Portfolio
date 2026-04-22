@@ -1,4 +1,5 @@
 import styles from "./App.module.css";
+import { AIAgent } from "./components/AIAgent/AIAgent";
 import { About } from "./components/About/About";
 import { Contact } from "./components/Contact/Contact";
 import { Experience } from "./components/Experience/Experience";
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Experience />
       <Projects />
+      <AIAgent />
       <Contact />
     </div>
   );

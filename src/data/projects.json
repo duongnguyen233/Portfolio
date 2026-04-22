@@ -1,9 +1,10 @@
 [
   {
     "title": "Healthcare Data Compliance App",
+    "domains": ["Web & Shopify", "Industrial Optimisation"],
     "imageSrc": "projects/healthcare.png",
     "description": "Automated application that converts aged-care facility data into government-standard CSV files, eliminating manual formatting and ensuring compliance.",
-    "skills": ["React + Vite", "TailwindCSS", "Node.js", "AWS", "Azure"],
+    "skills": ["React + Vite", "TypeScript", "TailwindCSS", "Node.js", "AWS", "Azure"],
     "demo": "https://care-data-portal.netlify.app/",
     "source": "https://github.com/duongnguyen233/CSIT321_Health-Trends-Analytics",
     "company": "UoW Capstone Project",
@@ -14,6 +15,7 @@
   },
   {
     "title": "Semiconductor Bonding Chip Machine",
+    "domains": ["Semiconductor", "Industrial Optimisation"],
     "imageSrc": "projects/TFC.png",
     "description": "Developed backend control software for semiconductor bonding chip machines used in industrial manufacturing environments.",
     "skills": ["C/C++", "MFC", "SECS", "Industrial Software"],
@@ -27,9 +29,10 @@
   },
   {
     "title": "Ticket Vending Machine",
+    "domains": ["Kiosk/Ticketing", "Embedded Systems"],
     "imageSrc": "projects/SMV.jpg",
-    "description": "Developed software for ticket vending machines, including UI applications and hardware control logic for coin classification and change systems.",
-    "skills": ["C++", "C#", "WPF", "Unity", "Embedded Systems"],
+    "description": "Developed software for ticket vending machines, including UI applications, hardware control for coin classification/change systems, and credit-card payment API integration.",
+    "skills": ["C++", "C#", "WPF", "Payment APIs", "Embedded Systems"],
     "demo": "https://www.shibaura.co.jp/smv/products/general/index.html",
     "source": "",
     "company": "Toshiba",
@@ -40,6 +43,7 @@
   },
   {
     "title": "Automotive HMI & Cluster Systems",
+    "domains": ["Automotive", "Embedded Systems"],
     "imageSrc": "projects/Cluster.png",
     "description": "Developed Human Machine Interface (HMI) and digital cluster software for automotive systems.",
     "skills": ["C/C++", "Kanzi Studio", "MFC", "Embedded Systems"],
@@ -53,6 +57,7 @@
   },
   {
     "title": "AI Face Recognition System",
+    "domains": ["AI/CV", "Web & Shopify"],
     "imageSrc": "projects/face.png",
     "description": "Developed a face-based identity recognition system using computer vision and machine learning techniques.",
     "skills": ["Python", "OpenCV", "KNN", "Machine Learning"],
@@ -64,8 +69,9 @@
     "hideDemo": true,
     "hideSource": false
   },
-    {
+  {
     "title": "Electric Dam Pump Scheduling Optimisation",
+    "domains": ["Industrial Optimisation", "AI/CV"],
     "imageSrc": "projects/dam.png",
     "description": "Optimised pump scheduling algorithms for hydroelectric dams to reduce electricity costs using genetic algorithms.",
     "skills": ["C/C++", "Python", "Genetic Algorithm", "Algorithm Optimisation"],

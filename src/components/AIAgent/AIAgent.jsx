@@ -150,7 +150,7 @@ export const AIAgent = () => {
         />
 
         <button className={styles.askBtn} type="submit" disabled={isLoading}>
-          {isLoading ? "Thinking..." : "Ask AI"}
+          {isLoading ? "Thinking..." : "Ask Me!"}
         </button>
       </form>
 

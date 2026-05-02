@@ -8,8 +8,19 @@
     "demo": "https://care-data-portal.netlify.app/",
     "source": "https://github.com/duongnguyen233/CSIT321_Health-Trends-Analytics",
     "company": "UoW Capstone Project",
+    "projectType": "University Capstone",
     "duration": "Jul 2025 - May 2026",
+    "teamSize": "5 members",
     "role": "Developer, Leader",
+    "highlights": [
+      "Built AI-assisted data validation and CSV export workflow for aged-care compliance reporting.",
+      "Implemented voice input support to speed up staff data entry."
+    ],
+    "responsibilities": [
+      "Led sprint planning and task breakdown for the team.",
+      "Developed frontend features in React and integrated backend APIs.",
+      "Reviewed code and merged pull requests."
+    ],
     "hideDemo": false,
     "hideSource": false
   },
@@ -22,7 +33,9 @@
     "demo": "https://www.shibaura.co.jp/e/products/semicon/index.html",
     "source": "",
     "company": "Toshiba",
+    "projectType": "Industrial Product",
     "duration": "Jun 2019 - Jun 2023",
+    "teamSize": "8 members",
     "role": "Software Engineer",
     "hideDemo": false,
     "hideSource": true
@@ -36,7 +49,9 @@
     "demo": "https://www.shibaura.co.jp/smv/products/general/index.html",
     "source": "",
     "company": "Toshiba",
+    "projectType": "Industrial Product",
     "duration": "Oct 2018 - Jun 2019",
+    "teamSize": "6 members",
     "role": "Software Engineer",
     "hideDemo": false,
     "hideSource": true
@@ -50,7 +65,9 @@
     "demo": "https://www.youtube.com/watch?v=4aEywv6uB40",
     "source": "",
     "company": "FPT Software",
+    "projectType": "Automotive Product",
     "duration": "Oct 2016 - Oct 2018",
+    "teamSize": "10 members",
     "role": "Software Engineer",
     "hideDemo": false,
     "hideSource": true
@@ -64,7 +81,9 @@
     "demo": "",
     "source": "https://github.com/duongnguyen233/CSCI218-Face-based-identity-recognition",
     "company": "UoW Group Project",
+    "projectType": "University Group Project",
     "duration": "Jul 2025 - Oct 2025",
+    "teamSize": "4 members",
     "role": "Developer, Leader",
     "hideDemo": true,
     "hideSource": false
@@ -78,7 +97,9 @@
     "demo": "",
     "source": "",
     "company": "Toshiba",
+    "projectType": "Industrial Optimisation",
     "duration": "Jun 2019 - Oct 2019",
+    "teamSize": "5 members",
     "role": "Software Engineer",
     "hideDemo": true,
     "hideSource": true

@@ -6,7 +6,7 @@
   border-radius: 12px;
   background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
   box-shadow: 0 12px 18px 0 rgba(4, 21, 45, 0.55);
-  padding: 16px;
+  padding: 14px;
   width: 100%;
   min-height: 100%;
 
@@ -27,8 +27,8 @@
 .media {
   position: relative;
   width: 100%;
-  height: 240px;
-  margin-bottom: 12px;
+  height: 200px;
+  margin-bottom: 10px;
 
   border-radius: 10px;
   overflow: hidden;
@@ -107,9 +107,32 @@
    Under image: title + skills + buttons
    ========================= */
 .title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.3;
+}
+
+.details {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 10px;
+  align-items: start;
+}
+
+.detailLabel {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.78;
+}
+
+.detailValue {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 500;
 }
 
 .domains {
@@ -131,9 +154,32 @@
   padding: 4px 10px;
 }
 
+.section {
+  margin-top: 10px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.92;
+}
+
+.pointList {
+  margin-top: 4px;
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pointItem {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
 .skills {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -142,16 +188,16 @@
 }
 
 .skill {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   border-radius: 100px;
   background: var(--color-dark);
-  padding: 5px 11px;
+  padding: 4px 10px;
 }
 
 .links {
   width: 100%;
-  margin-top: 16px;
+  margin-top: 12px;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
@@ -166,11 +212,11 @@
   text-decoration: none;
   color: var(--color-text);
   border: 1px solid transparent;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 100px;
   background: var(--color-primary);
-  padding: 7px 14px;
+  padding: 6px 12px;
   background-image: linear-gradient(
     90deg,
     rgba(165, 215, 232, 0.42) 0%,
@@ -180,6 +226,14 @@
   background-repeat: no-repeat;
   transition: background-size 0.3s ease, border-color 0.3s ease,
     transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.linkDisabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0.18);
+  background-image: none;
 }
 
 .link:hover,
@@ -193,4 +247,23 @@
 .link:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px rgba(165, 215, 232, 0.35);
+}
+
+@media screen and (max-width: 830px) {
+  .media {
+    height: 175px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .detailLabel {
+    font-size: 11px;
+  }
+
+  .detailValue,
+  .pointItem {
+    font-size: 12px;
+  }
 }

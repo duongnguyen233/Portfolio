@@ -18,8 +18,20 @@ export const ProjectCard = ({
     duration,
     company,
     role,
+    teamSize,
+    projectType,
+    responsibilities,
+    highlights,
   },
 }) => {
+  const detailItems = [
+    { label: "Type", value: projectType },
+    { label: "Company", value: company },
+    { label: "Role", value: role },
+    { label: "Duration", value: duration },
+    { label: "Team Size", value: teamSize },
+  ].filter((item) => item.value);
+
   return (
     <div className={styles.container}>
       {/* BIG image */}
@@ -61,6 +73,17 @@ export const ProjectCard = ({
       {/* Under image: name */}
       <h3 className={styles.title}>{title}</h3>
 
+      {detailItems.length > 0 && (
+        <dl className={styles.details}>
+          {detailItems.map((item) => (
+            <React.Fragment key={item.label}>
+              <dt className={styles.detailLabel}>{item.label}</dt>
+              <dd className={styles.detailValue}>{item.value}</dd>
+            </React.Fragment>
+          ))}
+        </dl>
+      )}
+
       {Array.isArray(domains) && domains.length > 0 && (
         <ul className={styles.domains}>
           {domains.map((domain) => (
@@ -69,6 +92,32 @@ export const ProjectCard = ({
             </li>
           ))}
         </ul>
+      )}
+
+      {Array.isArray(highlights) && highlights.length > 0 && (
+        <div className={styles.section}>
+          <h4 className={styles.sectionTitle}>What I Did</h4>
+          <ul className={styles.pointList}>
+            {highlights.map((item, id) => (
+              <li key={id} className={styles.pointItem}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {Array.isArray(responsibilities) && responsibilities.length > 0 && (
+        <div className={styles.section}>
+          <h4 className={styles.sectionTitle}>My Responsibilities</h4>
+          <ul className={styles.pointList}>
+            {responsibilities.map((item, id) => (
+              <li key={id} className={styles.pointItem}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {/* Under image: skills */}
@@ -104,6 +153,16 @@ export const ProjectCard = ({
           >
             Source
           </a>
+        )}
+
+        {(!source || hideSource) && (
+          <span
+            className={`${styles.link} ${styles.linkDisabled}`}
+            aria-disabled="true"
+            title="Source code is private"
+          >
+            Source Private
+          </span>
         )}
       </div>
     </div>

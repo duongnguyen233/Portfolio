@@ -50,6 +50,75 @@
   gap: 16px;
 }
 
+/* Full-width strip matches grid sections; arrows overlay edges (no horizontal inset). */
+.scrollOuter {
+  position: relative;
+  margin-top: 16px;
+  /* Allow arrows to sit slightly outside the strip so they clear card content */
+  overflow: visible;
+}
+
+.scrollOuter .projectsGrid {
+  margin-top: 0;
+}
+
+.scrollNavBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(4, 21, 45, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(4, 21, 45, 0.18);
+  transition: transform 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.scrollNavBtn:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.04);
+  border-color: rgba(165, 215, 232, 0.22);
+  background: rgba(4, 21, 45, 0.32);
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 16px rgba(4, 21, 45, 0.22);
+}
+
+.scrollNavBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(165, 215, 232, 0.28),
+    0 2px 12px rgba(4, 21, 45, 0.2);
+}
+
+.scrollNavBtn:disabled {
+  opacity: 0.06;
+  cursor: not-allowed;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.04);
+}
+
+.scrollNavPrev {
+  left: -18px;
+}
+
+.scrollNavNext {
+  right: -18px;
+}
+
+.scrollNavIcon {
+  display: block;
+  flex-shrink: 0;
+}
+
 /* Up to 3 projects: grid row(s), no horizontal scroll — stretch so cards share row height */
 /* Always three tracks when 2–3 cards so each card matches the ~⅓ width used in 3-card rows */
 .projectsGridFit {
@@ -153,5 +222,18 @@
   .projectsGridScroll .item {
     flex: 0 0 100%;
     min-width: 100%;
+  }
+
+  .scrollNavBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scrollNavPrev {
+    left: -12px;
+  }
+
+  .scrollNavNext {
+    right: -12px;
   }
 }

@@ -191,6 +191,34 @@
     "hideSource": false
   },
   {
+    "title": "Digital Care – AI4Care Platform",
+    "category": "webCloudAi",
+    "domains": ["Healthcare", "Web Application", "AI Integration", "Cloud"],
+    "imageSrc": "projects/digital-care.png",
+    "description": "Contributed to a cloud-based aged care management platform with AI-powered analytics, secure authentication, and automated reporting workflows.",
+    "skills": ["React", "Next.js", "TypeScript", "Flask", "Python", "Azure", "REST API"],
+    "demo": "",
+    "source": "https://github.com/duongnguyen233/Digital-Care",
+    "company": "University / Team Project",
+    "projectType": "Full-stack Cloud Application",
+    "duration": "Mar 2026 - Jun 2026",
+    "teamSize": "Team Project",
+    "role": "Frontend Developer / Integration Contributor",
+    "highlights": [
+      "Integrated multiple team features into a unified system",
+      "Maintained code quality and ensured stable application builds",
+      "Supported development of healthcare data workflows and dashboards"
+    ],
+    "responsibilities": [
+      "Merged and integrated team-developed features into main codebase",
+      "Resolved conflicts and ensured consistent code structure",
+      "Maintained frontend components and API integration",
+      "Collaborated with team to test and stabilize application"
+    ],
+    "hideDemo": true,
+    "hideSource": false
+  },
+  {
     "title": "AI Face Recognition System",
     "category": "webCloudAi",
     "domains": ["AI/CV", "Machine Learning", "Computer Vision"],

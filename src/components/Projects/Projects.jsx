@@ -107,8 +107,8 @@ const CATEGORY_ORDER = [
 
 const CATEGORY_LABELS = {
   automotive: "Automotive",
-  industrialAutomation: "Industrial & automation systems",
-  webCloudAi: "Web, e-commerce & AI",
+  industrialAutomation: "Industrial & Automation Systems",
+  webCloudAi: "Web, E-Commerce & AI",
 };
 
 export const Projects = () => {

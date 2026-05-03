@@ -5,17 +5,17 @@
   box-sizing: border-box;
   background-color: rgba(12, 12, 12, 0.6);
   border-radius: 15px;
-  padding: 44px 73px;
-  margin-top: 96px;
+  padding: 32px 56px;
+  margin-top: 80px;
   margin-left: 10%;
   margin-right: 10%;
   z-index: 1;
 }
 
 .title {
-  margin: 0 0 18px 0;
+  margin: 0 0 12px 0;
   color: var(--color-text);
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
@@ -23,31 +23,26 @@
 
 .content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.aboutImage {
-  width: 35%;
-  max-height: 240px;
-  object-fit: contain;
-  align-self: flex-start;
+  flex-direction: column;
 }
 
 .aboutItems {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 20px;
 }
 
 .aboutItem {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 20px;
   list-style: none;
-  padding: 16px 18px;
+  padding: 12px 14px;
   background-image: linear-gradient(
     90deg,
     rgba(165, 215, 232, 0.42) 0%,
@@ -62,18 +57,25 @@
   background-size: 100% 100%;
 }
 
+.aboutItemText {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
 .aboutItem h3 {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
-  margin: 0 0 6px 0;
+  margin: 0 0 5px 0;
   line-height: 1.25;
+  text-align: left;
 }
 
 .aboutItem p {
   margin: 0;
-  font-size: 17px;
-  line-height: 1.45;
-  text-align: justify;
+  font-size: 16px;
+  line-height: 1.42;
+  text-align: left;
 }
 
 @media screen and (max-width: 830px) {
@@ -87,13 +89,9 @@
     flex-direction: column;
   }
 
-  .aboutImage {
-    display: none;
-  }
-
   .aboutItems {
-    margin-top: 18px;
-    gap: 22px;
+    margin-top: 14px;
+    gap: 18px;
   }
 
   .aboutItem {

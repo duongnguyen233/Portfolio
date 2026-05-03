@@ -3,9 +3,10 @@
 .container {
   position: relative;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 28px;
   margin-top: 49px;
   z-index: 1;
   margin-left: 10%;
@@ -16,10 +17,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex: 1;
-  max-width: 980px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
   color: var(--color-text);
   z-index: 1;
+  order: 1;
 }
 
 .title {
@@ -47,11 +50,11 @@
 .buttonRow {
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-self: center;
+  justify-content: flex-start;
+  align-self: stretch;
   gap: 24px;
   width: 100%;
-  max-width: 640px;
+  max-width: none;
 }
 
 .contactBtn {
@@ -93,8 +96,11 @@
 
 /* ✅ Wrapper keeps layout + floating + perspective */
 .heroWrap {
-  width: 46%;
+  flex: 0 0 auto;
+  width: clamp(260px, 34vw, 380px);
   z-index: 1;
+  order: 2;
+  margin-left: auto;
 
   display: flex;
   justify-content: center;
@@ -107,8 +113,9 @@
 /* ✅ The "coin" flips, not the images */
 .coin {
   position: relative;
-  width: min(420px, 42vw);
-  height: min(420px, 42vw);
+  width: min(360px, 100%);
+  aspect-ratio: 1;
+  height: auto;
 
   transform-style: preserve-3d;
   transition: transform 700ms cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -203,11 +210,14 @@
 
   .heroWrap {
     width: 100%;
+    max-width: none;
+    margin-left: 0;
     margin-bottom: 24px;
   }
 
   .coin {
     width: 280px;
     height: 280px;
+    aspect-ratio: unset;
   }
 }

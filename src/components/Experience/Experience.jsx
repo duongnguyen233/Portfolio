@@ -6,6 +6,13 @@ import history from "../../data/history.json";
 import { getImageUrl } from "../../utils";
 import Reveal from "../common/Reveal";
 
+/** Category title + chips on one row (short groups only). */
+const INLINE_SKILL_CATEGORIES = new Set([
+  "AI & Data",
+  "Testing & Quality",
+  "UI / Design",
+]);
+
 export const Experience = () => {
   const [hoveredHistoryIndex, setHoveredHistoryIndex] = useState(null);
 
@@ -42,75 +49,85 @@ export const Experience = () => {
         <h2 className={styles.title}>Experience</h2>
         <div className={styles.content}>
           <div className={styles.skills}>
-            {skills.map((group, groupId) => {
-              return (
-                <section key={groupId} className={styles.skillGroup}>
-                  <h3 className={styles.groupTitle}>{group.category}</h3>
-                  <div className={styles.groupItems}>
-                    {group.items.map((skill, skillId) => {
-                      const isSkillActive = selectedTechSet.has(
-                        normalizeTechName(skill.title)
-                      );
-                      return (
-                        <div
-                          key={skillId}
-                          className={`${styles.skillItem} ${
-                            isSkillActive ? styles.skillItemActive : ""
-                          }`}
-                        >
-                          <div className={styles.skillImageContainer}>
-                            {skill.imageSrc ? (
-                              <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-                            ) : (
-                              <span className={styles.fallbackIcon}>
-                                {skill.shortLabel || skill.title.slice(0, 2).toUpperCase()}
-                              </span>
-                            )}
+            <div className={styles.skillsBody}>
+              {skills.map((group, groupId) => {
+                const inlineRow = INLINE_SKILL_CATEGORIES.has(group.category);
+                return (
+                  <section
+                    key={groupId}
+                    className={`${styles.skillGroup} ${inlineRow ? styles.skillGroupInline : ""}`}
+                  >
+                    <h3 className={styles.groupTitle}>{group.category}</h3>
+                    <div className={styles.groupItems}>
+                      {group.items.map((skill, skillId) => {
+                        const isSkillActive = selectedTechSet.has(
+                          normalizeTechName(skill.title)
+                        );
+                        return (
+                          <div
+                            key={skillId}
+                            className={`${styles.skillItem} ${
+                              isSkillActive ? styles.skillItemActive : ""
+                            }`}
+                          >
+                            <div className={styles.skillImageContainer}>
+                              {skill.imageSrc ? (
+                                <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                              ) : (
+                                <span className={styles.fallbackIcon}>
+                                  {skill.shortLabel || skill.title.slice(0, 2).toUpperCase()}
+                                </span>
+                              )}
+                            </div>
+                            <p>{skill.title}</p>
                           </div>
-                          <p>{skill.title}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </section>
-              );
-            })}
-          </div>
-          <ul className={styles.history}>
-            {history.map((historyItem, id) => {
-              return (
-                <li
-                  key={id}
-                  className={`${styles.historyItem} ${
-                    hoveredHistoryIndex === id ? styles.historyItemActive : ""
-                  }`}
-                  tabIndex={0}
-                  onMouseEnter={() => setHoveredHistoryIndex(id)}
-                  onMouseLeave={() => setHoveredHistoryIndex(null)}
-                  onFocus={() => setHoveredHistoryIndex(id)}
-                  onBlur={() => setHoveredHistoryIndex(null)}
-                >
-                  <img
-                    src={getImageUrl(historyItem.imageSrc)}
-                    alt={`${historyItem.organisation} Logo`}
-                  />
-                  <div className={styles.historyItemDetails}>
-                    <h3 className={styles.historyRole}>{historyItem.role}</h3>
-                    <p className={styles.historyOrganisation}>{historyItem.organisation}</p>
-                    {historyItem.location && (
-                      <p className={styles.historyLocation}>{historyItem.location}</p>
-                    )}
-                    <p className={styles.historyDate}>{`${historyItem.startDate} - ${historyItem.endDate}`}</p>
-                    <ul>
-                      {historyItem.experiences.map((experience, id) => {
-                        return <li key={id}>{experience}</li>;
+                        );
                       })}
-                    </ul>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                    </div>
+                  </section>
+                );
+              })}
+            </div>
+            <div className={styles.columnStretchTail} aria-hidden />
+          </div>
+          <div className={styles.history}>
+            <ul className={styles.historyList}>
+              {history.map((historyItem, id) => {
+                return (
+                  <li
+                    key={id}
+                    className={`${styles.historyItem} ${
+                      hoveredHistoryIndex === id ? styles.historyItemActive : ""
+                    }`}
+                    tabIndex={0}
+                    onMouseEnter={() => setHoveredHistoryIndex(id)}
+                    onMouseLeave={() => setHoveredHistoryIndex(null)}
+                    onFocus={() => setHoveredHistoryIndex(id)}
+                    onBlur={() => setHoveredHistoryIndex(null)}
+                  >
+                    <img
+                      src={getImageUrl(historyItem.imageSrc)}
+                      alt={`${historyItem.organisation} Logo`}
+                    />
+                    <div className={styles.historyItemDetails}>
+                      <h3 className={styles.historyRole}>{historyItem.role}</h3>
+                      <p className={styles.historyOrganisation}>{historyItem.organisation}</p>
+                      {historyItem.location && (
+                        <p className={styles.historyLocation}>{historyItem.location}</p>
+                      )}
+                      <p className={styles.historyDate}>{`${historyItem.startDate} - ${historyItem.endDate}`}</p>
+                      <ul>
+                        {historyItem.experiences.map((experience, id2) => {
+                          return <li key={id2}>{experience}</li>;
+                        })}
+                      </ul>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className={styles.columnStretchTail} aria-hidden />
+          </div>
         </div>
       </Reveal>
     </section>

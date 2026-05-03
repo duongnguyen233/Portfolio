@@ -1,6 +1,7 @@
 [
   {
     "title": "Healthcare Data Compliance App",
+    "category": "webCloudAi",
     "domains": ["Web & Shopify", "Industrial Optimisation"],
     "imageSrc": "projects/healthcare.png",
     "description": "Automated application that converts aged-care facility data into government-standard CSV files, with AI-powered data suggestions and voice-recording AI support to speed up compliant submissions.",
@@ -26,6 +27,7 @@
   },
   {
     "title": "Semiconductor Bonding Chip Machine",
+    "category": "semiconductorMachines",
     "domains": ["Semiconductor", "Industrial Optimisation"],
     "imageSrc": "projects/TFC.png",
     "description": "Developed backend control software for semiconductor bonding chip machines used in industrial manufacturing environments.",
@@ -42,6 +44,7 @@
   },
   {
     "title": "Ticket Vending Machine",
+    "category": "semiconductorMachines",
     "domains": ["Kiosk/Ticketing", "Embedded Systems"],
     "imageSrc": "projects/SMV.jpg",
     "description": "Developed software for ticket vending machines, including UI applications, hardware control for coin classification/change systems, and credit-card payment API integration.",
@@ -57,7 +60,20 @@
     "hideSource": true
   },
   {
+    "title": "Placeholder — Semiconductor project",
+    "category": "semiconductorMachines",
+    "domains": ["Semiconductor", "Industrial"],
+    "imageSrc": "projects/TFC.png",
+    "description": "Replace this card with a real project when ready.",
+    "skills": ["Coming soon"],
+    "demo": "",
+    "source": "",
+    "hideDemo": true,
+    "hideSource": true
+  },
+  {
     "title": "Automotive HMI & Cluster Systems",
+    "category": "automotive",
     "domains": ["Automotive", "Embedded Systems"],
     "imageSrc": "projects/Cluster.png",
     "description": "Developed Human Machine Interface (HMI) and digital cluster software for automotive systems.",
@@ -74,6 +90,7 @@
   },
   {
     "title": "AI Face Recognition System",
+    "category": "webCloudAi",
     "domains": ["AI/CV", "Web & Shopify"],
     "imageSrc": "projects/face.png",
     "description": "Developed a face-based identity recognition system using computer vision and machine learning techniques.",
@@ -90,6 +107,7 @@
   },
   {
     "title": "Electric Dam Pump Scheduling Optimisation",
+    "category": "webCloudAi",
     "domains": ["Industrial Optimisation", "AI/CV"],
     "imageSrc": "projects/dam.png",
     "description": "Optimised pump scheduling algorithms for hydroelectric dams to reduce electricity costs using genetic algorithms.",

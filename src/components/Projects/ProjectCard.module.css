@@ -1,19 +1,150 @@
 @import "../../vars.css";
 
 .container {
+  /* Preview frame height when single-card hover/peek expands the image */
+  --project-card-height: 398px;
+
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+
   border-radius: 12px;
   background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
   box-shadow: 0 12px 18px 0 rgba(4, 21, 45, 0.55);
-  padding: 14px;
-  width: 100%;
-  min-height: 100%;
+  padding: 10px;
 
-  justify-content: space-between;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
 
   transition: transform 200ms ease, box-shadow 200ms ease;
   will-change: transform;
+}
+
+.containerSingle {
+  flex: 0 0 auto;
+  height: auto;
+  width: min(100%, 420px);
+  align-self: flex-start;
+}
+
+.containerSingle:has(.media:hover),
+.containerSingle:has(.media:focus-visible),
+.containerSingle.containerPeekOpen {
+  flex: 0 0 var(--project-card-height);
+  height: var(--project-card-height);
+  min-height: var(--project-card-height);
+  max-height: var(--project-card-height);
+}
+
+/* Equal row height in multi-column / horizontal-scroll rows */
+.containerMulti {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.containerMulti:has(.media:hover),
+.containerMulti:has(.media:focus-visible),
+.containerMulti.containerPeekOpen {
+  min-height: var(--project-card-height);
+}
+
+.containerMulti .cardSurface {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  grid-template-rows: var(--media-thumb) minmax(0, 1fr);
+  align-content: stretch;
+}
+
+.containerMulti .cardBody {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.containerMulti .cardBodyScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.containerMulti .links {
+  margin-top: auto;
+  padding-top: 8px;
+  min-height: 44px;
+}
+
+.cardSurface {
+  --media-thumb: 140px;
+
+  flex: 0 1 auto;
+  min-height: 0;
+  height: auto;
+  display: grid;
+  grid-template-rows: var(--media-thumb) auto;
+  gap: 8px;
+  align-content: start;
+  transition: grid-template-rows 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+    gap 0.42s ease;
+}
+
+.container:has(.media:hover) .cardSurface,
+.container:has(.media:focus-visible) .cardSurface,
+.containerPeekOpen .cardSurface {
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 0fr);
+  gap: 0;
+  align-content: stretch;
+}
+
+.cardBody {
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.26s ease, visibility 0s linear 0s;
+}
+
+.cardBodyScroll {
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 2px;
+}
+
+.cardBodyScroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cardBodyScroll::-webkit-scrollbar-thumb {
+  background: rgba(165, 215, 232, 0.28);
+  border-radius: 999px;
+}
+
+.container:has(.media:hover) .cardBody,
+.container:has(.media:focus-visible) .cardBody,
+.containerPeekOpen .cardBody {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0s linear 0.2s;
 }
 
 .container:hover {
@@ -22,18 +153,24 @@
 }
 
 /* =========================
-   BIG IMAGE (fixed size)
+   Image row — grows to fill card when previewing
    ========================= */
 .media {
   position: relative;
   width: 100%;
-  height: 200px;
-  margin-bottom: 10px;
+  min-height: 0;
 
   border-radius: 10px;
   overflow: hidden;
 
   background: #0b1b3a;
+  cursor: pointer;
+  outline: none;
+  touch-action: manipulation;
+}
+
+.media:focus-visible {
+  box-shadow: 0 0 0 2px rgba(165, 215, 232, 0.45);
 }
 
 /* Make ALL images same size (crop nicely) */
@@ -47,6 +184,13 @@
 
   /* helps padded images feel closer in scale */
   transform: scale(1.06);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.container:has(.media:hover) .image,
+.container:has(.media:focus-visible) .image,
+.containerPeekOpen .image {
+  transform: scale(1);
 }
 
 /* =========================
@@ -55,6 +199,7 @@
 .hoverPanel {
   position: absolute;
   inset: 0;
+  z-index: 2;
 
   opacity: 0;
   transform: translateY(10px);
@@ -69,32 +214,76 @@
   );
 }
 
-.container:hover .hoverPanel,
-.container:focus-within .hoverPanel {
+.container:has(.media:hover) .hoverPanel,
+.container:has(.media:focus-visible) .hoverPanel,
+.containerPeekOpen .hoverPanel {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .hoverContent {
   position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
+  inset: 0;
+  padding: 12px 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
 
-  /* no font-family override -> uses your global font */
+.hoverContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hoverContent::-webkit-scrollbar-thumb {
+  background: rgba(165, 215, 232, 0.35);
+  border-radius: 999px;
+}
+
+.hoverTitle {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  opacity: 0.98;
 }
 
 .hoverDesc {
-  margin: 0 0 10px 0;
-  font-size: 16px;
+  margin: 0;
+  font-size: 14px;
   line-height: 1.35;
-
-  /* keep it neat (not too long) */
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   opacity: 0.95;
+}
+
+.hoverBlock {
+  margin: 0;
+}
+
+.hoverBlockTitle {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.hoverList {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.92;
+}
+
+.hoverList li {
+  margin: 3px 0;
 }
 
 .meta p {
@@ -107,37 +296,17 @@
    Under image: title + skills + buttons
    ========================= */
 .title {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.details {
-  margin-top: 8px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 6px 10px;
-  align-items: start;
-}
-
-.detailLabel {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 0.78;
-}
-
-.detailValue {
   margin: 0;
-  font-size: 13px;
-  line-height: 1.35;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  flex-shrink: 0;
 }
 
 .domains {
   width: 100%;
-  margin-top: 10px;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -154,32 +323,10 @@
   padding: 4px 10px;
 }
 
-.section {
-  margin-top: 10px;
-}
-
-.sectionTitle {
-  font-size: 13px;
-  font-weight: 700;
-  opacity: 0.92;
-}
-
-.pointList {
-  margin-top: 4px;
-  margin-left: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.pointItem {
-  font-size: 13px;
-  line-height: 1.35;
-}
-
 .skills {
   width: 100%;
-  margin-top: 10px;
+  margin: 0 0 1em 0;
+  padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -197,11 +344,15 @@
 
 .links {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 0;
+  padding-top: 8px;
+  flex-shrink: 0;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* keep your button style */
@@ -250,20 +401,27 @@
 }
 
 @media screen and (max-width: 830px) {
-  .media {
-    height: 175px;
+  .container {
+    --project-card-height: 372px;
+  }
+
+  .cardSurface {
+    --media-thumb: 120px;
   }
 
   .title {
-    font-size: 18px;
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardSurface,
+  .cardBody,
+  .cardBodyScroll {
+    transition-duration: 0.01ms;
   }
 
-  .detailLabel {
-    font-size: 11px;
-  }
-
-  .detailValue,
-  .pointItem {
-    font-size: 12px;
+  .hoverPanel {
+    transition-duration: 0.01ms;
   }
 }

@@ -6,14 +6,14 @@ import { ProjectCard } from "./ProjectCard";
 
 const CATEGORY_ORDER = [
   "automotive",
-  "semiconductorMachines",
+  "industrialAutomation",
   "webCloudAi",
 ];
 
 const CATEGORY_LABELS = {
   automotive: "Automotive",
-  semiconductorMachines: "Semiconductor & machines",
-  webCloudAi: "Web & cloud · AI & implementations",
+  industrialAutomation: "Industrial & automation systems",
+  webCloudAi: "Web, e-commerce & AI",
 };
 
 export const Projects = () => {

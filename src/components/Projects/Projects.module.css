@@ -50,16 +50,13 @@
   gap: 16px;
 }
 
-/* Up to 3 projects: grid row(s), no horizontal scroll */
+/* Up to 3 projects: grid row(s), no horizontal scroll — stretch so cards share row height */
+/* Always three tracks when 2–3 cards so each card matches the ~⅓ width used in 3-card rows */
 .projectsGridFit {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-items: stretch;
   align-items: stretch;
-}
-
-.projectsGridFit:has(> .item:nth-child(2):last-child) {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .projectsGridFit:has(> .item:only-child) {
@@ -127,10 +124,6 @@
 
 @media screen and (max-width: 1100px) {
   .projectsGridFit {
-    grid-template-columns: 1fr;
-  }
-
-  .projectsGridFit:has(> .item:nth-child(2):last-child) {
     grid-template-columns: 1fr;
   }
 

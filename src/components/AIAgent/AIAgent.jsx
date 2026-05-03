@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import styles from "./AIAgent.module.css";
 import projects from "../../data/projects.json";
 import history from "../../data/history.json";
@@ -32,6 +32,7 @@ export const AIAgent = () => {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const textareaRef = useRef(null);
 
   const context = useMemo(() => buildDefaultContext(), []);
 
@@ -43,6 +44,7 @@ export const AIAgent = () => {
   );
 
   const quickPrompts = [
+    "Which projects best match embedded systems roles?",
     "What is your strongest domain experience?",
     "Which project best demonstrates your full-stack capability?",
     "Which projects show your embedded systems skills?",
@@ -101,18 +103,22 @@ export const AIAgent = () => {
   return (
     <section className={styles.container} id="ai-agent">
       <h2 className={styles.title}>Ask About Me</h2>
-      <p className={styles.subtitle}>
-        Ask me anything about my experience, projects, or skills — I’m happy to
-        share!
+      <p className={styles.hint}>
+        Click a suggested question below to load it into the box (you can edit
+        it), or type your own, then press <strong>Ask Me!</strong>
       </p>
 
+      <h3 className={styles.promptsHeading}>Suggested questions</h3>
       <div className={styles.quickPrompts}>
         {quickPrompts.map((prompt) => (
           <button
             key={prompt}
             type="button"
             className={styles.quickPrompt}
-            onClick={() => setQuestion(prompt)}
+            onClick={() => {
+              setQuestion(prompt);
+              textareaRef.current?.focus();
+            }}
           >
             {prompt}
           </button>
@@ -122,7 +128,11 @@ export const AIAgent = () => {
       <div className={styles.chatBox}>
         {messages.length === 0 ? (
           <div className={styles.emptyState}>
-            Try asking: "Which projects best match embedded systems roles?"
+            <p className={styles.emptyTitle}>No messages yet</p>
+            <p className={styles.emptyBody}>
+              Pick a suggestion above or write your own question, then use{" "}
+              <strong>Ask Me!</strong>
+            </p>
           </div>
         ) : (
           messages.map((message, index) => (
@@ -141,6 +151,7 @@ export const AIAgent = () => {
 
       <form className={styles.form} onSubmit={askAgent}>
         <textarea
+          ref={textareaRef}
           id="agent-question"
           className={styles.textarea}
           value={question}

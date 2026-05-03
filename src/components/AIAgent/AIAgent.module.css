@@ -14,29 +14,51 @@
   text-transform: uppercase;
 }
 
-.subtitle {
-  margin-top: 10px;
-  font-size: 18px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.86);
+.hint {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 52rem;
+}
+
+.hint strong {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.promptsHeading {
+  margin: 20px 0 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+  color: rgba(165, 215, 232, 0.95);
 }
 
 .quickPrompts {
-  margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 10px;
+  align-items: stretch;
 }
 
 .quickPrompt {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.08);
   color: var(--color-text);
   font-size: 13px;
-  padding: 6px 12px;
+  line-height: 1.4;
+  padding: 12px 14px;
+  text-align: left;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   cursor: pointer;
   background-image: linear-gradient(
     90deg,
@@ -92,8 +114,28 @@
 }
 
 .emptyState {
+  margin: auto 0;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.emptyTitle {
+  margin: 0 0 8px 0;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.emptyBody {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.emptyBody strong {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .message {
@@ -204,8 +246,16 @@
     font-size: 30px;
   }
 
-  .subtitle {
-    font-size: 16px;
+  .hint {
+    font-size: 14px;
+  }
+
+  .promptsHeading {
+    margin-top: 16px;
+  }
+
+  .quickPrompts {
+    grid-template-columns: 1fr;
   }
 
   .chatBox {

@@ -38,18 +38,13 @@
   max-height: var(--project-card-height);
 }
 
-/* Equal row height in multi-column / horizontal-scroll rows */
+/* Equal row height in multi-column / horizontal-scroll rows — fill stretched grid/flex cell */
 .containerMulti {
   flex: 1;
   min-height: 0;
+  height: 100%;
   width: 100%;
   max-width: none;
-}
-
-.containerMulti:has(.media:hover),
-.containerMulti:has(.media:focus-visible),
-.containerMulti.containerPeekOpen {
-  min-height: var(--project-card-height);
 }
 
 .containerMulti .cardSurface {
@@ -208,9 +203,9 @@
 
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.65) 55%,
-    rgba(0, 0, 0, 0.88) 100%
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.8) 55%,
+    rgba(0, 0, 0, 1) 100%
   );
 }
 

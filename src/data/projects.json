@@ -168,7 +168,7 @@
     "imageSrc": "projects/healthcare.png",
     "description": "Built a full-stack healthcare analytics platform that transforms aged-care facility data into government-compliant reports, with AI-assisted insights and automated data processing.",
     "skills": ["React", "TypeScript", "Tailwind CSS", "FastAPI", "Node.js", "Azure", "AI Integration"],
-    "demo": "https://care-data-portal.netlify.app/",
+    "demo": "https://www.caredataportal.com",
     "source": "https://github.com/duongnguyen233/CSIT321_Health-Trends-Analytics",
     "company": "University of Wollongong",
     "projectType": "University Capstone Project",
